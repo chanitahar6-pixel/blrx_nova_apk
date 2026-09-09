@@ -1,7 +1,0 @@
-{
-  "name": "NOVA",
-  "description": "تطبيق حديث وفاخر بتصميم داكن ولمسات نيون بنفسجية، يوفر تجربة راقية لاستكشاف أحدث المنتجات التقنية مع مفضلة وملف شخصي متكامل.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
-
