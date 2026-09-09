@@ -30,6 +30,21 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
+      - name: Create debug.keystore if missing
+        run: |
+          if [ ! -f "debug.keystore" ]; then
+            echo "Generating debug.keystore for CI build..."
+            keytool -genkeypair -v \
+              -keystore debug.keystore \
+              -alias androiddebugkey \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -storepass android \
+              -keypass android \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - name: Prepare and Build Debug APK
         run: |
           if [ -f "./gradlew" ]; then
